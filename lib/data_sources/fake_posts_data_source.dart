@@ -3,9 +3,9 @@ import 'dart:async';
 
 class FakePostsDataSource {
   final List<Post> _fakePosts = [
-    Post(id: '1', title: 'Post 1', description: 'Description of Post 1'),
-    Post(id: '2', title: 'Post 2', description: 'Description of Post 2'),
-    Post(id: '3', title: 'Post 3', description: 'Description of Post 3'),
+    Post(id: '1', title: 'Mon post voiture', description: 'Description of Post 1'),
+    Post(id: '2', title: 'Mon post finance', description: 'Description of Post 2'),
+    Post(id: '3', title: 'Mon post sport', description: 'Description of Post 3'),
   ];
 
   Future<List<Post>> getAllPosts() async {

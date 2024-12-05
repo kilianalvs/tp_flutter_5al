@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../blocs/posts_bloc.dart';
-import '../models/post.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,14 +8,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Posts')),
+      appBar: AppBar(title: const Text('Mes Tweets')),
       body: BlocBuilder<PostsBloc, PostsState>(
         builder: (context, state) {
           if (state is PostsLoading) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (state is PostsLoaded) {
             if (state.posts.isEmpty) {
-              return Center(child: Text('No posts available'));
+              return const Center(child: Text('Pas de tweets'));
             }
             return ListView.builder(
               itemCount: state.posts.length,
@@ -32,7 +31,7 @@ class HomeScreen extends StatelessWidget {
               },
             );
           } else {
-            return Center(child: Text('Error loading posts'));
+            return const Center(child: Text('Error loading posts'));
           }
         },
       ),
